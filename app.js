@@ -1,6 +1,6 @@
 var css = document.querySelector("h3");
-var color1 = document.getElementById(".color1");
-var color2 = document.getElementById(".color2");
+var color1 = document.querySelector(".color1");
+var color2 = document.querySelector(".color2");
 var body = document.querySelector("body");
 var gradient = document.getElementById("gradient");
 var option;
@@ -17,15 +17,17 @@ function radial(){
 
 gradient.onchange = function() {
     var x = document.getElementById("gradient").value;
+    
         if(x == "radial"){
             console.log(x);
-            color1.addEventListener('input',radial);
-            color2.addEventListener('input',radial);
+            color1.addEventListener('input',radial,true);
+            color2.addEventListener('input',radial,true);
         }else if(x == "linear"){
             console.log(x);
-            color1.addEventListener('input',linear);
-            color2.addEventListener('input',linear);
+            color1.addEventListener('input',linear,true);
+            color2.addEventListener('input',linear,true);
         }
+
 }
 
 
